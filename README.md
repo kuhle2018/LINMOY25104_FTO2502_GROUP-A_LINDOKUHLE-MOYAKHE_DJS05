@@ -23,6 +23,32 @@ This project will demonstrate your ability to work with dynamic routes, manage s
 
 ---
 
+### API Endpoints
+
+Data can be called via a `fetch` request to the following three endpoints. Note that there is not always a one-to-one mapping between endpoints and actual data structures. Also note that **\*`<ID>`** indicates where the dynamic ID for the requested item should be placed. For example: `[https://podcast-api.netlify.app/genre/3](https://podcast-api.netlify.app/genre/3)`\*
+
+| URL                                          |                                                                                        |
+| -------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `https://podcast-api.netlify.app`            | Returns an array of PREVIEW                                                            |
+| `https://podcast-api.netlify.app/genre/<ID>` | Returns a GENRE object                                                                 |
+| `https://podcast-api.netlify.app/id/<ID>`    | Returns a SHOW object with several SEASON and EPISODE objects directly embedded within |
+
+### Genre Titles
+
+Since genre information is only exposed on `PREVIEW` by means of the specific `GENRE` id, it is recommended that you include the mapping between genre id values and title in your code itself:
+
+| ID  | Title                    |
+| --- | ------------------------ |
+| 1   | Personal Growth          |
+| 2   | Investigative Journalism |
+| 3   | History                  |
+| 4   | Comedy                   |
+| 5   | Entertainment            |
+| 6   | Business                 |
+| 7   | Fiction                  |
+| 8   | News                     |
+| 9   | Kids and Family          |
+
 ## Deliverables
 
 1. **Homepage / Listing Page**
