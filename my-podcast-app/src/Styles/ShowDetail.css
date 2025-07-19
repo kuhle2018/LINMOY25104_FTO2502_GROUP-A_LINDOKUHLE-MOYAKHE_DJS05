@@ -1,0 +1,47 @@
+.show-detail {
+  padding: 2rem;
+  background: linear-gradient(to left, #4c84ec, #2ed8c1, #29f1c6);
+  border-radius: 12px;
+  max-width: 1000px;
+  margin: auto;
+  color: #222;
+}
+
+.cover-image {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.back-button {
+  padding: 0.5rem 1rem;
+  background: #eee;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.season-card {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #fff;
+  border-left: 4px solid #4c84ec;
+  border-radius: 8px;
+}
+
+.episode {
+  display: flex;
+  gap: 1rem;
+  padding: 0.5rem 0;
+}
+
+.episode-image {
+  width: 70px;
+  border-radius: 8px;
+}
+
+.episode-info p {
+  margin: 0.2rem 0;
+}
+
