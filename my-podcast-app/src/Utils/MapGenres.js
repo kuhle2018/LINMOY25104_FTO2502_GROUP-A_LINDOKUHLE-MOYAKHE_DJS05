@@ -5,7 +5,7 @@
  * @returns {string[]} - List of genre titles
  */
 
-import { genres } from "..src/data/genres";
+import { genres } from "../Data/mapGenres";
 
 export function mapGenreIdsToTitles(genreIds) {
   return genreIds.map(

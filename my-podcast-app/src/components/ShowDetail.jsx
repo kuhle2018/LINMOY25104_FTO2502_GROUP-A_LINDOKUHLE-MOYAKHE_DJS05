@@ -6,7 +6,7 @@
 
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
-import { mapGenreIdsToTitles } from "..src/utils/MapGenres";
+import { mapGenreIdsToTitles } from "../Utils/MapGenres";
 import "./ShowDetail.css";
 
 export default function ShowDetail() {
