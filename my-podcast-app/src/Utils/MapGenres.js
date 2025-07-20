@@ -7,7 +7,7 @@
  * @returns {string[]} - List of genre titles
  */
 
-import { genres } from "../Data/genres"; // ✅ corrected path
+import { genres } from "../Data/Genres"; // final fix ✅
 
 export function mapGenreIdsToTitles(genreIds) {
   if (!Array.isArray(genreIds)) return [];

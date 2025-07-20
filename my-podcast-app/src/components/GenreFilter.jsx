@@ -10,7 +10,7 @@
 
 import React, { useState } from "react";
 // ✅ Fix import path — your genres file lives in src/Data/genres.js
-import { genres } from "../Data/genres";
+import { genres } from "../Data/Genres";
 
 export default function GenreFilter({ selectedGenres, onChange }) {
   const [showSelect, setShowSelect] = useState(false);

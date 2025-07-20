@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
-import PodcastList from "./components/PodcastList";
+
+
+
 // Use ShowDetail (the file you actually have) instead of PodcastDetail
 import ShowDetail from "./components/PodcastDetail";
 import "./App.css";
