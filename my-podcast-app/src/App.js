@@ -1,10 +1,9 @@
-// src/App.js
-
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import PodcastList from "./components/PodcastList";
-import PodcastDetail from "./components/PodcastDetail";
+// Use ShowDetail (the file you actually have) instead of PodcastDetail
+import ShowDetail from "./components/PodcastDetail";
 import "./App.css";
 
 function App() {
@@ -12,7 +11,6 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Fetch all podcasts once on mount
   useEffect(() => {
     fetch("https://podcast-api.netlify.app/")
       .then((res) => {
@@ -21,11 +19,12 @@ function App() {
       })
       .then((data) => {
         setPodcasts(data);
-        setLoading(false);
       })
       .catch((err) => {
         console.error(err);
         setError(err);
+      })
+      .finally(() => {
         setLoading(false);
       });
   }, []);
@@ -47,8 +46,8 @@ function App() {
         />
 
         <Route
-          path="/podcast/:id"
-          element={<PodcastDetail />}
+          path="/show/:id"
+          element={<ShowDetail />}
         />
       </Routes>
     </BrowserRouter>

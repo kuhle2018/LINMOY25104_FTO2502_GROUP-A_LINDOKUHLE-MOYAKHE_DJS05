@@ -1,5 +1,7 @@
-/** 
- * ShowDetail.jsx – Displays podcast show details and season navigation
+// src/components/PodcastDetail.jsx
+
+/**
+ * PodcastDetail.jsx – Displays podcast show details and season navigation
  * @component
  * @returns {JSX.Element}
  */
@@ -7,9 +9,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { mapGenreIdsToTitles } from "../Utils/MapGenres";
-import "./ShowDetail.css";
+import "../Styles/PodcastDetail.css"; // renamed to match new component name
 
-export default function ShowDetail() {
+export default function PodcastDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
   const location = useLocation();
@@ -41,8 +43,10 @@ export default function ShowDetail() {
   const genreTitles = mapGenreIdsToTitles(show.genres);
 
   return (
-    <div className="show-detail">
-      <button className="back-button" onClick={goBack}>← Back to Homepage</button>
+    <div className="podcast-detail">
+      <button className="back-button" onClick={goBack}>
+        ← Back to Homepage
+      </button>
       <h1>{show.title}</h1>
       <img src={show.image} alt={show.title} className="cover-image" />
       <p className="description">{show.description}</p>

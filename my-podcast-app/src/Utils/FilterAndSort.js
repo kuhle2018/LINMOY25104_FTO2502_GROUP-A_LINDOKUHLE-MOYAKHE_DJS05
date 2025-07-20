@@ -1,3 +1,5 @@
+// src/Utils/FilterAndSort.js
+
 /**
  * Filters and sorts podcast list based on UI state.
  *
@@ -9,25 +11,34 @@
  */
 
 function filterByGenres(podcasts, selectedGenres) {
-  if (selectedGenres.length === 0) return podcasts;
+  if (!selectedGenres?.length) return podcasts;
   return podcasts.filter((podcast) =>
-    podcast.genres.some((id) => selectedGenres.includes(id))
+    podcast.genres?.some((id) => selectedGenres.includes(id))
   );
 }
 
 export function filterAndSort(podcasts, searchTerm, selectedGenres, sortOrder) {
   let result = [...podcasts];
-  if (searchTerm)
+
+  // Filter by search term
+  if (searchTerm?.trim())
     result = result.filter((p) =>
-      p.title.toLowerCase().includes(searchTerm.toLowerCase())
+      p.title?.toLowerCase().includes(searchTerm.toLowerCase())
     );
+
+  // Filter by genres
   result = filterByGenres(result, selectedGenres);
-  if (sortOrder === "newest")
+
+  // Sort
+  if (sortOrder === "newest") {
     result.sort((a, b) => new Date(b.updated) - new Date(a.updated));
-  else if (sortOrder === "title-asc")
+  } else if (sortOrder === "title-asc") {
     result.sort((a, b) => a.title.localeCompare(b.title));
-  else if (sortOrder === "title-desc")
+  } else if (sortOrder === "title-desc") {
     result.sort((a, b) => b.title.localeCompare(a.title));
+  }
+
   return result;
 }
+
 

@@ -1,3 +1,5 @@
+// src/components/GenreFilter.jsx
+
 /**
  * GenreFilter Component
  *
@@ -7,7 +9,8 @@
  */
 
 import React, { useState } from "react";
-import { genres } from "../components/data/genres";
+// ✅ Fix import path — your genres file lives in src/Data/genres.js
+import { genres } from "../Data/genres";
 
 export default function GenreFilter({ selectedGenres, onChange }) {
   const [showSelect, setShowSelect] = useState(false);
@@ -36,3 +39,4 @@ export default function GenreFilter({ selectedGenres, onChange }) {
     </div>
   );
 }
+

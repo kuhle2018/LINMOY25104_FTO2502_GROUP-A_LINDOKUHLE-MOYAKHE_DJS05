@@ -1,12 +1,14 @@
+// src/components/PodcastCard.jsx
+
 import React from "react";
 import { Link } from "react-router-dom";
-import { mapGenreIdsToTitles } from "..src/utils/mapGenres";
+import { mapGenreIdsToTitles } from "../Utils/MapGenres";
 
 export default function PodcastCard({ podcast }) {
   const genreNames = mapGenreIdsToTitles(podcast.genres);
 
   return (
-    <Link to={`/show/${podcast.id}`} state={{ fromFilters: true }}>
+    <Link to={`/podcast/${podcast.id}`} state={{ fromFilters: true }}>
       <div className="podcast-card">
         <img
           src={podcast.image}
